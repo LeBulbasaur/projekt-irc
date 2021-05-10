@@ -15,7 +15,6 @@ app.listen(PORT, () => {
 });
 
 app.get("/", (req, res) => {
-    res.header('Content-Type: text/html; charset=utf-8')
     res.sendFile(path.join(__dirname, "static/index.html"))
 })
 
