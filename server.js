@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/get-message", (req, res) => {
+    res.header('Content-Type: text/html; charset=utf-8')
     res.send(JSON.stringify(obj))
     res.end("message sent")
 })

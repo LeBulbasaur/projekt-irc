@@ -21,7 +21,7 @@ $(document).ready(function () {
         msgSpan.innerText = `${obj.message}`
         msg.append(msgSpan)
         chatBox.append(msg)
-        $('.message-span').emoticonize();
+        // $('.message-span').emoticonize();
         form.message.value = ""
     }
 
