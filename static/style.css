@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    font-family: 'Germania One', cursive;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 10%);
+}
+#chat-area{
+    margin-top: 5vh;
+    width: 50vw;
+    height: 75vh;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+#background-img{
+    position: absolute;
+    width: 50vw;
+    height: 75vh;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.3;
+}
+#text-input{
+    margin-top: 1vh;
+    border-radius: 10px;
+    width: 50vw;
+}
+.message{
+    margin-left: 20px;
+    margin-top: 10px;
+    color: blanchedalmond;
+    z-index: 1;
+}
