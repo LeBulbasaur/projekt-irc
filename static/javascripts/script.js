@@ -61,7 +61,6 @@ $(document).ready(function () {
     }
 
     form.onsubmit = (e) => {
-        console.log()
         e.preventDefault()
         if (form.message.value && form.message.value[0] != "/") {
             const date = new Date();
@@ -77,6 +76,7 @@ $(document).ready(function () {
                     method: "POST",
                 })
             }, 50)
+            form.message.value = ""
         } else if (form.message.value) {
             let msgText = form.message.value
             switch (msgText) {
