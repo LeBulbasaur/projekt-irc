@@ -11,7 +11,7 @@ app.use(express.static("static"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-longpoll.create("/poll");
+longpoll.create("/poll")
 
 app.listen(PORT, () => {
     console.log(`Server starting in: ${PORT}`)
@@ -24,8 +24,10 @@ app.get("/", (req, res) => {
 longpoll.publish("/poll", obj)
 
 setInterval(function () {
-    longpoll.publish("/poll", obj);
-}, 1000);
+    if (obj.message) {
+        longpoll.publish("/poll", obj)
+    }
+}, 10)
 
 app.post("/send-message", (req, res) => {
     obj = req.body

@@ -25,12 +25,11 @@ $(document).ready(function () {
         msg.append(msgSpan)
         chatBox.append(msg)
         $('.message-span').emoticonize()
-        form.message.value = ""
     }
 
     let poll = function () {
         $.ajax({
-            url: "http://localhost:3000/poll",
+            url: "/poll",
             success: async function (data) {
                 if (Object.keys(data).length != 0) {
                     msgObj = data
@@ -53,7 +52,7 @@ $(document).ready(function () {
         if (msgID != lastMsgId) {
             writeMessage(msgObj)
         }
-    }, 500)
+    }, 10)
 
     if (!getCookie("nick")) {
         const nickname = window.prompt("Enter nickname:")
@@ -77,7 +76,7 @@ $(document).ready(function () {
                 fetch("/clear", {
                     method: "POST",
                 })
-            }, 750)
+            }, 50)
         } else if (form.message.value) {
             let msgText = form.message.value
             switch (msgText) {
